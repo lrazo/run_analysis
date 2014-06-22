@@ -1,4 +1,4 @@
-This is a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md.
+This is a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data.
 
 The script defines the following variables:
 
@@ -20,11 +20,19 @@ xy_melt				- data frame containing the melt result of xy_activity_labels using t
 
 xy_cast_mean		- data frame containing the average of each variable for each activity and each subject. Stored as a file.
 
+
+
 The script first loads all the files x_all and x_all then makes a cbind of them into xy_all. 
+
 The script reads the column names from another file and adds them to the xy_all data frame. 
+
 Therefore selects using regex only the columns containing the mean and std from the xy_all into xy_all_subset.  
+
 Moreover adds the activity label column joining the xy_all_subset and activityLabel frames. Writes the resulting table into a file. 
+
 Finally performs a melt and cbind with the average result of each activity label for each column. Writes the resulting table into a file.
+
+
 
 This are the labels employed as columns in the data farmes xy_activity_labels and as variables in xy_cast_mean:
 
