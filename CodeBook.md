@@ -3,14 +3,22 @@ This is a code book that describes the variables, the data, and any transformati
 The script defines the following variables:
 
 x_all 				- data frame containing all the data from x_test and x_train
+
 y_all 				- data frame containing all the data from y_test and y_train
+
 headerColumns 		- data frame containing the header columns data for the x_all data frame
+
 activityLabels 		- data frame containing the relation label number and activity label
+
 xy_all 				- data frame containing all the data from x_all and y_all 
+
 xy_all_subset 		- data frame containing all the data from xy_all but only with the mean and std columns
-xy_activity_labels 	- data frame containing all the data from xy_all_subset with the activityLabel column 
+
+xy_activity_labels 	- data frame containing all the data from xy_all_subset with the activityLabel column. Stored as a file.
+
 xy_melt				- data frame containing the melt result of xy_activity_labels using the activityLabel as grouping column
-xy_cast_mean		- data frame containing the average of each variable for each activity and each subject. 
+
+xy_cast_mean		- data frame containing the average of each variable for each activity and each subject. Stored as a file.
 
 The script first loads all the files x_all and x_all then makes a cbind of them into xy_all. 
 The script reads the column names from another file and adds them to the xy_all data frame. 
