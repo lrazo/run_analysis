@@ -1,3 +1,7 @@
+library(reshape2)
+library(plyr)
+
+run_analysis <- function(){
 ## Peer Assessments /Getting and Cleaning Data Course Project
 ## 1.- Merges the training and the test sets to create one data set.
 ## read the x_test and x_train files
@@ -10,6 +14,7 @@ headerColumns <- read.table("./UCI HAR Dataset/features.txt")
 colnames(x_all) <- headerColumns[[2]]
 ## read activity labels
 activityLabels <- read.table("./UCI HAR Dataset/activity_labels.txt")
+colnames(activityLabels) <- c("labels","activityLabels")
 ## read the y_test and y_train files
 listOfYFiles <- c("./UCI HAR Dataset/test/Y_test.txt",
                   "./UCI HAR Dataset/train/Y_train.txt")
@@ -32,3 +37,4 @@ xy_melt <- melt(xy_activity_labels,id=c("activityLabels"),measure.vars=names(xy_
 xy_cast_mean <- dcast(xy_melt,activityLabels ~ variable,mean)
 write.table(xy_activity_labels,file="xy_cast_mean.csv")
 
+}
