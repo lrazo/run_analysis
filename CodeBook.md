@@ -86,4 +86,4 @@ fBodyBodyGyroMag-std()
 fBodyBodyGyroJerkMag-mean() 
 fBodyBodyGyroJerkMag-std() 
 labels
-activityLabels
+activityLabels 
